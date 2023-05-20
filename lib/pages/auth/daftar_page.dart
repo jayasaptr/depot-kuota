@@ -32,7 +32,12 @@ class DaftarPage extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const OtpPage(),
+                builder: (context) => OtpPage(
+                  isRegister: true,
+                  email: emailController.text,
+                  hp: "62${hpController.text}",
+                  nama: namaController.text,
+                ),
               ),
             );
           }
@@ -123,12 +128,18 @@ class DaftarPage extends StatelessWidget {
             controller: hpController,
             hint: "8xx-xxxx-xxxx",
             prefix: Padding(
-              padding: const EdgeInsets.only(top: 11, left: 15),
-              child: Text(
-                "+62",
-                style: GoogleFonts.nunito(
-                  color: const Color(0xff128ED3),
-                  fontWeight: FontWeight.w400,
+              padding: const EdgeInsets.all(10),
+              child: SizedBox(
+                width: 20,
+                child: Center(
+                  child: Text(
+                    "+62",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.nunito(
+                      color: const Color(0xff128ED3),
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                 ),
               ),
             ),

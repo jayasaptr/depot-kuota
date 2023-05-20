@@ -14,10 +14,46 @@ class AuthLoading extends AuthState {}
 class AuthRegisterSuccess extends AuthState {
   final ValidasiRegister validasiRegister;
 
-  const AuthRegisterSuccess({required this.validasiRegister});
+  const AuthRegisterSuccess( {required this.validasiRegister});
 
   @override
-  List<Object> get props => [validasiRegister];
+  List<Object> get props => [validasiRegister, ];
+}
+
+class AuthLoginSuccess extends AuthState {
+  final LoginModel loginModel;
+
+  const AuthLoginSuccess({required this.loginModel});
+
+  @override
+  List<Object> get props => [loginModel];
+}
+
+class GetOtpSuccess extends AuthState {
+  final String otp;
+
+  const GetOtpSuccess({required this.otp});
+
+  @override
+  List<Object> get props => [otp];
+}
+
+class AuthLoginOtpSuccess extends AuthState {
+  final LoginSuccessModel loginModel;
+
+  const AuthLoginOtpSuccess({required this.loginModel});
+
+  @override
+  List<Object> get props => [loginModel];
+}
+
+class AuthRegisterOtpSuccess extends AuthState {
+  final RegisterSuccessModel loginModel;
+
+  const AuthRegisterOtpSuccess({required this.loginModel});
+
+  @override
+  List<Object> get props => [loginModel];
 }
 
 class AuthRegisterFailed extends AuthState {
