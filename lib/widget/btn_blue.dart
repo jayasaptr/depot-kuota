@@ -4,7 +4,9 @@ import 'package:sizer/sizer.dart';
 
 class BtnBlue extends StatelessWidget {
   const BtnBlue({
-    super.key, this.txtBtn, this.onPressed,
+    super.key,
+    this.txtBtn,
+    this.onPressed,
   });
 
   final String? txtBtn;
@@ -13,7 +15,7 @@ class BtnBlue extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40,
+      height: 41,
       width: MediaQuery.of(context).size.width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(

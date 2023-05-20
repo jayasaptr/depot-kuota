@@ -74,66 +74,63 @@ class _TextInputCostumeState extends State<TextInputCostume> {
         Row(
           children: [
             Expanded(
-              child: SizedBox(
-                height: 41,
-                child: TextField(
-                  controller: widget.controller,
-                  keyboardType: widget.type,
-                  style: GoogleFonts.nunito(
-                    color: const Color(0xff626262),
-                    fontWeight: FontWeight.w600,
+              child: TextField(
+                controller: widget.controller,
+                keyboardType: widget.type,
+                style: GoogleFonts.nunito(
+                  color: const Color(0xff626262),
+                  fontWeight: FontWeight.w600,
+                ),
+                onChanged: (value) {
+                  if (widget.onChanged != null) {
+                    widget.onChanged!();
+                  }
+                },
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.only(
+                      top: 10, left: 10, right: 10, bottom: 10),
+                  prefixIcon: widget.prefix != null ? widget.prefix! : null,
+                  hintText: widget.hint ?? "",
+                  suffixIcon: widget.isNotValid
+                      ? Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: Image.asset(
+                            'assets/icons/warning.png',
+                          ),
+                        )
+                      : widget.isTrue
+                          ? Padding(
+                              padding: const EdgeInsets.only(right: 10),
+                              child: Image.asset(
+                                'assets/icons/check.png',
+                              ),
+                            )
+                          : null,
+                  suffixIconConstraints: BoxConstraints(maxHeight: 7.w),
+                  hintStyle: GoogleFonts.nunito(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w400,
                   ),
-                  onChanged: (value) {
-                    if (widget.onChanged != null) {
-                      widget.onChanged!();
-                    }
-                  },
-                  decoration: InputDecoration(
-                    contentPadding:
-                        const EdgeInsets.only(top: 10, left: 10, right: 10),
-                    prefixIcon: widget.prefix != null ? widget.prefix! : null,
-                    hintText: widget.hint ?? "",
-                    suffixIcon: widget.isNotValid
-                        ? Padding(
-                            padding: const EdgeInsets.only(right: 10),
-                            child: Image.asset(
-                              'assets/icons/warning.png',
-                            ),
-                          )
-                        : widget.isTrue
-                            ? Padding(
-                                padding: const EdgeInsets.only(right: 10),
-                                child: Image.asset(
-                                  'assets/icons/check.png',
-                                ),
-                              )
-                            : null,
-                    suffixIconConstraints: BoxConstraints(maxHeight: 7.w),
-                    hintStyle: GoogleFonts.nunito(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    borderSide: const BorderSide(
+                      color: Color(0xff9A9A9A),
                     ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(14),
-                      borderSide: const BorderSide(
-                        color: Color(0xff9A9A9A),
-                      ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    borderSide: BorderSide(
+                      color: widget.isNotValid
+                          ? const Color(0xffD97456)
+                          : widget.isTrue
+                              ? const Color(0xff56D974)
+                              : const Color(0xff9A9A9A),
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(14),
-                      borderSide: BorderSide(
-                        color: widget.isNotValid
-                            ? const Color(0xffD97456)
-                            : widget.isTrue
-                                ? const Color(0xff56D974)
-                                : const Color(0xff9A9A9A),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(14),
-                      borderSide: const BorderSide(
-                        color: Color(0xff9A9A9A),
-                      ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    borderSide: const BorderSide(
+                      color: Color(0xff9A9A9A),
                     ),
                   ),
                 ),

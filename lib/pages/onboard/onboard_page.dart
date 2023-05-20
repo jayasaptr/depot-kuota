@@ -24,7 +24,7 @@ class _OnboardPageState extends State<OnboardPage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
+                      builder: (context) =>  LoginPage(),
                     ));
               },
               child: Container(
