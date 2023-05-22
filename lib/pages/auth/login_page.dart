@@ -32,7 +32,9 @@ class LoginPage extends StatelessWidget {
             ).show(context);
           }
           if (state is AuthLoginSuccess) {
-            AuthRepostiroy().sendOtp(hp: "62${hpController.text}");
+            AuthRepostiroy().sendOtp(
+                hp: "62${hpController.text}",
+                email: state.loginModel.data.email);
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -155,7 +157,9 @@ class LoginPage extends StatelessWidget {
                     ),
                     onPressed: () {
                       BlocProvider.of<AuthBloc>(context).add(
-                        AuthLoginEvent(hp: "62${hpController.text}"),
+                        AuthLoginEvent(
+                          hp: "62${hpController.text}",
+                        ),
                       );
                     },
                     child: Text(

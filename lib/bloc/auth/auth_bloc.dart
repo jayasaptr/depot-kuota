@@ -7,6 +7,7 @@ import 'package:equatable/equatable.dart';
 
 import '../../model/auth/login_model.dart';
 import '../../model/auth/validasi_register_model.dart';
+import '../../service/shared_pref_service.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -62,6 +63,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       try {
         LoginSuccessModel login =
             await _repository.loginOtp(hp: event.hp, otp: event.otp);
+        await SharedPreferencesService.setAuthModel(login);
         emit(AuthLoginOtpSuccess(loginModel: login));
       } catch (e) {
         RegisterFailedModel failed = e as RegisterFailedModel;

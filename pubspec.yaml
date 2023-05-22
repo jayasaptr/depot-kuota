@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  another_flushbar: ^1.12.30
   bloc: ^8.1.1
   carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.2
@@ -36,13 +37,13 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.2
   flutter_otp_text_field: ^1.1.1
+  flutter_spinkit: ^5.2.0
   google_fonts: ^4.0.4
   http: ^0.13.6
-  otp_timer_button: ^1.1.0
-  sizer: ^2.0.15
   loader_overlay: ^2.2.0
-  flutter_spinkit: ^5.2.0
-  another_flushbar: ^1.12.30
+  otp_timer_button: ^1.1.0
+  shared_preferences: ^2.1.1
+  sizer: ^2.0.15
 
 dev_dependencies:
   flutter_lints: ^2.0.0

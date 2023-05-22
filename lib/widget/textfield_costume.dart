@@ -8,6 +8,7 @@ class TextfielCostume extends StatefulWidget {
     this.title,
     this.hint,
     this.prefix,
+    this.suffix,
     this.type,
     this.onChanged,
     this.controller,
@@ -16,6 +17,7 @@ class TextfielCostume extends StatefulWidget {
   final String? title;
   final String? hint;
   final Widget? prefix;
+  final Widget? suffix;
   final TextInputType? type;
   final TextEditingController? controller;
   final VoidCallback? onChanged;
@@ -52,6 +54,8 @@ class _TextfielCostumeState extends State<TextfielCostume> {
               fontWeight: FontWeight.w600,
             ),
             decoration: InputDecoration(
+              suffixIcon: widget.suffix != null ? widget.suffix! : null,
+              suffixIconConstraints: BoxConstraints(maxHeight: 7.w),
               contentPadding: const EdgeInsets.all(10),
               prefixIcon: widget.prefix != null ? widget.prefix! : null,
               fillColor: Colors.white,

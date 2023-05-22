@@ -57,15 +57,16 @@ class AuthRepostiroy implements BaseAuthRepository {
     }
   }
 
-  Future<ValidasiRegister> sendOtp({String? hp}) async {
+  Future<ValidasiRegister> sendOtp({String? hp, String? email}) async {
     final response = await http.post(
-      Uri.parse("${SharedCode.baseUrl}v1/otp/send"),
+      Uri.parse("${SharedCode.baseUrl}v2/otp/send"),
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       encoding: Encoding.getByName('utf-8'),
       body: {
         "hp": hp,
+        "email" :email,
       },
     );
 
