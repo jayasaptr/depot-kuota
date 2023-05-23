@@ -21,6 +21,7 @@ class HomeShowSaldoState extends HomeState {
 class HomeInit extends HomeState {}
 
 class HomeLoadingState extends HomeState {}
+class HomeLoadingDataState extends HomeState {}
 
 class HomeSuccessState extends HomeState {
   final ListHomeModel listHomeModel;
