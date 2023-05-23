@@ -14,7 +14,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       emit(HomeShowSaldoState(isShowSaldo: event.isShowSaldo));
     });
     on<GetListHomeEvent>((event, emit) async {
-      emit(HomeLoadingState());
+      emit(HomeLoadingDataState());
       try {
         ListHomeModel listHomeModel = await _homeRepository.getListHome();
         emit(HomeSuccessState(listHomeModel: listHomeModel));

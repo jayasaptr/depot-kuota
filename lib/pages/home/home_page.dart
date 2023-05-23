@@ -32,18 +32,6 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // BlocBuilder<HomeBloc, HomeState>(
-          //   builder: (context, state) {
-          //     if (state is HomeShowSaldoState) {
-          //       return HeaderHome(
-          //         isShowSaldo: state.isShowSaldo,
-          //       );
-          //     }
-          //     return const HeaderHome(
-          //       isShowSaldo: false,
-          //     );
-          //   },
-          // ),
           BlocSelector<HomeBloc, HomeState, bool>(
             selector: (state) {
               if (state is HomeShowSaldoState) {
